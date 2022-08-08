@@ -1,0 +1,113 @@
+.u {
+    &__container {
+        // background-color: #D5E8D4;
+        &--medium {
+            margin: 10rem auto;
+            background-color: #D5E8D4;
+            width: 50rem;
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+
+        // &--btn-group {
+
+        // }
+    }
+    &__layout {
+        &--text {
+            &--center {
+                text-align: center;
+            }
+        }
+        &--block {
+            &--center {
+                justify-content: center;
+            }
+        }
+    }
+    &__button {
+        &--large{
+            display: block;
+            margin: 0.5rem auto;
+            width: 20rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            border-radius: 0.7rem;
+            border: none;
+            color: white;
+            background-color: #60A917;
+            cursor: pointer;
+        }
+        &--large:hover {
+            background-color: #76cd1f;
+        }
+    }
+    &__p {
+        &--center {
+            margin: 0.7rem auto;
+            text-align: center;
+            font-weight: 700;
+        }
+    }
+    &__margin {
+        &--all {
+            &--lg{}
+            &--md{
+                padding: 2rem
+            }
+            &--sm{}
+        }
+        &--left {
+            &--lg{}
+            &--md{}
+            &--sm{}
+        }
+        &--right {
+            &--lg{}
+            &--md{}
+            &--sm{}
+        }
+        &--top {
+            &--lg{}
+            &--md{}
+            &--sm{}
+        }
+        &--bottom {
+            &--lg{}
+            &--md{ margin-bottom: 2rem;}
+            &--sm{ margin-bottom: 1rem;}
+        }
+    }
+    &__padding {
+        &--all {
+            &--lg{}
+            &--md{}
+            &--sm{}
+        }
+        &--left {
+            &--lg{}
+            &--md{}
+            &--sm{}
+        }
+        &--right {
+            &--lg{}
+            &--md{}
+            &--sm{}
+        }
+        &--top {
+            &--lg{}
+            &--md{}
+            &--sm{}
+        }
+        &--bottom {
+            &--lg{}
+            &--md{}
+            &--sm{}
+        }
+    }
+    &__visibility {
+        &--hide {
+            display: none;
+        }
+    }
+}
