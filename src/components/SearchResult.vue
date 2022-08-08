@@ -1,16 +1,15 @@
 <template>
   <div class="c__search-result">
     <NavigatorVue />
-    <div class="c__road-event--container">
-      <img :src="activeRoadEvent.src" :alt="activeRoadEvent.displayName">
-      <div class="road-event">
-        {{ activeRoadEvent.displayName }} 
-        <span>
-          <img :src="activeRoadEvent.src" :alt="activeRoadEvent.displayName"> 
-        </span>
-      </div>
-    </div>
     <section class="c__search-result__section">
+      <div :class="{'c__road-event': true, 'u__visibility--hide': roadSign.isVisible}">
+        <div class="event-text">
+          {{ activeRoadEvent.displayName }} 
+        </div>
+        <div class="event-img">  
+          <img :src="imagePath" :alt="activeRoadEvent.displayName" />
+        </div>
+      </div>
       <div class="dest-img">
         <img :src="destination.img" :alt="destination.title">
       </div>
@@ -20,6 +19,8 @@
       <p class="direction-text">
         {{ destination.direction }}
       </p>
+      <div class="background-color: white" :class="{'u__visibility--hide': roadSign.isVisible}">dflskflsdfs</div>
+
     </aside>
   </div>
 </template>
@@ -34,19 +35,23 @@ export default {
     },
     data() {
         return {
-          active: 0,
-          roadEvent: [
-            {name: 'speed-bump', src: '@/assets/images/speed-bump.png', displayName: 'Bumps ahead'},
-            {name: 'u-turn', src: '@/assets/images/u-turn.png', displayName: 'U-Turn ahead'},
-            {name: 'zebra-crossing', src: '@/assets/images/zebra-crossing.png', displayName: 'Zebra Crossing'}
-          ]
+          roadSign: {
+            active: 0,
+            eventList: [
+            {src: "@/assets/images/speed-bump.png", displayName: "Bumps ahead", title: "speed-bump.png"},
+            {src: "@/assets/images/u-turn.png", displayName: "U-Turn ahead", title: "u-turn.png"},
+            {src: "@/assets/images/zebra-crossing.png", displayName: "Zebra Crossing", title: "zebra-crossing.png"}
+           ],
+           isVisible: true
+          }
         };
     },
     computed: {
       activeRoadEvent () {
-        let ret = {...this.roadEvent[this.active]}
-        console.log('ret is : ', ret.src)
-        return ret
+        return {...this.roadSign.eventList[this.roadSign.active]}
+      },
+      imagePath () {
+        return require(`@/assets/images/${this.activeRoadEvent.title}`);
       },
       ...mapState({
         destination: 'destination'
@@ -55,12 +60,22 @@ export default {
     methods: {
       async updateActiveEvent () {
         setInterval(()=>{
-          this.active = Math.floor(Math.random()*3)
-        }, [2000])
+          this.roadSign.isVisible = true
+          this.roadSign.active = Math.floor(Math.random()*3)
+          this.updateVisibility()
+        }, (Math.floor(Math.random()*7)+5)*1000)
+      },
+      async updateVisibility () {
+        setTimeout(()=> {
+          this.roadSign.isVisible = false
+        }, 2000)
       }
     },
     created() {
       this.updateActiveEvent()
-    }
+    },
+    updated() {
+      // this.updateVisibility()
+      }
 }
 </script>

@@ -107,7 +107,7 @@
     }
     &__visibility {
         &--hide {
-            display: none;
+            display: none !important;
         }
     }
 }
