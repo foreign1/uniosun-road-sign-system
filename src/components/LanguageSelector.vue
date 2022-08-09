@@ -10,7 +10,7 @@
       </div>
         <div class="button-container">
             <button @click="handleLangChange('English')" class="u__button--large">English</button>
-            <button @click="handleLangChange('Yoruba')" class="u__button--large">Yoruba</button>
+            <button @click="handleLangChange('Yoruba')" class="u__button--large">Yorùbá</button>
             <button @click="handleLangChange('Hausa')" class="u__button--large">Hausa</button>
             <button @click="handleLangChange('Igbo')" class="u__button--large">Igbo</button>
         </div>

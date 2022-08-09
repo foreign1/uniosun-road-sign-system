@@ -14,7 +14,7 @@ export const store = new Vuex.Store({
   getters: {
     interaction: state => {
       if (state.language === 'English') return {title: 'Choose the modality of interaction', text: 'Text', voice: 'Voice'}
-      else if (state.language === 'Yoruba') return {title: 'Yan ọna ibaraenisepo', text: 'ọrọ', voice: 'Ohun'}
+      else if (state.language === 'Yoruba') return {title: 'Yan ìlànà ìjíròrò', text: 'Ọ̀rọ̀ kíkọsílẹ̀', voice: 'Ọ̀rọ̀ ẹnu'}
       else if (state.language === 'Hausa') return {title: 'Zaɓi tsarin hulɗa', text: 'Rubutu', voice: 'Murya'}
       else return {title: 'Họrọ usoro mmekọrịta', text: 'Ederede', voice: 'Olu'}
     },
