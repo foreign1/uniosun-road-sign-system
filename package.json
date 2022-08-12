@@ -13,6 +13,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@google-cloud/translate": "^7.0.0",
     "vue": "^2.5.2",
     "vue-material-design-icons": "^5.1.2",
     "vue-router": "^3.5.4",

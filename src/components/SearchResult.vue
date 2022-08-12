@@ -19,14 +19,13 @@
       <p class="direction-text">
         {{ destination.direction }}
       </p>
-      <div class="background-color: white" :class="{'u__visibility--hide': roadSign.isVisible}">dflskflsdfs</div>
-
     </aside>
   </div>
 </template>
 <script>
 import NavigatorVue from './Navigator.vue'
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
+// import { translateText } from '../modules/translation'
 
 export default {
     name: "SearchResult",
@@ -73,6 +72,7 @@ export default {
     },
     created() {
       this.updateActiveEvent()
+      // translateText('How are you doing today?', 'yo')
     },
     updated() {
       // this.updateVisibility()

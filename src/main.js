@@ -6,6 +6,7 @@ import App from './App'
 import VueRouter from 'vue-router'
 import routes from './router/routes.js'
 import { store } from './store/store'
+import '@/assets/css/style.css'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
