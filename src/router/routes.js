@@ -4,6 +4,7 @@ import LanguageSelector from '@/components/LanguageSelector'
 import ModeSelector from '@/components/ModeSelector'
 import TextMode from '@/components/TextMode'
 import SearchResult from '@/components/SearchResult'
+import DirectionMap from '@/components/DirectionMap'
 
 export default [
   {
@@ -36,5 +37,10 @@ export default [
     path: '/searchResult',
     component: SearchResult,
     props: true
+  },
+  {
+    name: 'direction',
+    path: '/direction',
+    component: DirectionMap,
   }
 ]

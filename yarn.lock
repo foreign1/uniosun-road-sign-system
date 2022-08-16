@@ -744,6 +744,14 @@
   "resolved" "https://registry.npmjs.org/aws4/-/aws4-1.11.0.tgz"
   "version" "1.11.0"
 
+"axios@^0.27.2":
+  "integrity" "sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.27.2.tgz"
+  "version" "0.27.2"
+  dependencies:
+    "follow-redirects" "^1.14.9"
+    "form-data" "^4.0.0"
+
 "babel-code-frame@^6.22.0", "babel-code-frame@^6.26.0":
   "integrity" "sha512-XqYMR2dfdGMW+hd0IUZ2PwK+fGeFkOxZJ0wY+JaQAHzt1Zx8LcvpiZD2NiGkEG8qx0CfkAOr5xt76d1e8vG90g=="
   "resolved" "https://registry.npmjs.org/babel-code-frame/-/babel-code-frame-6.26.0.tgz"
@@ -2325,7 +2333,7 @@
   "resolved" "https://registry.npmjs.org/colors/-/colors-1.1.2.tgz"
   "version" "1.1.2"
 
-"combined-stream@^1.0.6", "combined-stream@~1.0.6":
+"combined-stream@^1.0.6", "combined-stream@^1.0.8", "combined-stream@~1.0.6":
   "integrity" "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg=="
   "resolved" "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz"
   "version" "1.0.8"
@@ -3414,6 +3422,11 @@
     "es6-symbol" "~3.1.1"
     "event-emitter" "~0.3.5"
 
+"es6-promise@^4.0.5":
+  "integrity" "sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w=="
+  "resolved" "https://registry.npmjs.org/es6-promise/-/es6-promise-4.2.8.tgz"
+  "version" "4.2.8"
+
 "es6-set@~0.1.5":
   "integrity" "sha512-7S8YXIcUfPMOr3rqJBVMePAbRsD1nWeSMQ86K/lDI76S3WKXz+KWILvTIPbTroubOkZTGh+b+7/xIIphZXNYbA=="
   "resolved" "https://registry.npmjs.org/es6-set/-/es6-set-0.1.5.tgz"
@@ -4139,7 +4152,7 @@
     "inherits" "^2.0.3"
     "readable-stream" "^2.3.6"
 
-"follow-redirects@^1.0.0":
+"follow-redirects@^1.0.0", "follow-redirects@^1.14.9":
   "integrity" "sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.1.tgz"
   "version" "1.15.1"
@@ -4167,6 +4180,15 @@
   "integrity" "sha512-j0KLYPhm6zeac4lz3oJ3o65qvgQCcPubiyotZrXqEaG4hNagNYO8qdlUrX5vwqv9ohqeT/Z3j6+yW067yWWdUw=="
   "resolved" "https://registry.npmjs.org/forever-agent/-/forever-agent-0.6.1.tgz"
   "version" "0.6.1"
+
+"form-data@^4.0.0":
+  "integrity" "sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww=="
+  "resolved" "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "asynckit" "^0.4.0"
+    "combined-stream" "^1.0.8"
+    "mime-types" "^2.1.12"
 
 "form-data@~2.3.2":
   "integrity" "sha512-1lLKB2Mu3aGP1Q/2eCOx0fNbRMe7XdwktwOruhfqqd0rIJWwN4Dh+E3hrPSlDCXnSR7UtZ1N38rVXm+6+MEhJQ=="
@@ -4449,6 +4471,13 @@
     "protobufjs" "7.0.0"
     "protobufjs-cli" "1.0.0"
     "retry-request" "^5.0.0"
+
+"google-maps-api-loader@^1.1.1":
+  "integrity" "sha512-+bxumYl6WCxKDjygLFF2FxrNyKIB0QgWKFb+EZ6F5wt/MoU2cm/8se9uQ0o1nY7389F2qe6ocdpSFn1bKQAD5w=="
+  "resolved" "https://registry.npmjs.org/google-maps-api-loader/-/google-maps-api-loader-1.1.1.tgz"
+  "version" "1.1.1"
+  dependencies:
+    "es6-promise" "^4.0.5"
 
 "google-p12-pem@^4.0.0":
   "integrity" "sha512-lRTMn5ElBdDixv4a86bixejPSRk1boRtUowNepeKEVvYiFlkLuAJUVpEz6PfObDHYEKnZWq/9a2zC98xu62A9w=="
@@ -6306,6 +6335,11 @@
   "integrity" "sha512-wbLDJ7Zh0sqA0Vdg6aqlbT+yPxqLblpAZh1mK2+AO2twQkPywvvqQNfEPVwSSRjZ7dZcdeVBIAgiO7MMp3Dszw=="
   "resolved" "https://registry.npmjs.org/marked/-/marked-4.0.18.tgz"
   "version" "4.0.18"
+
+"marker-clusterer-plus@^2.1.4":
+  "integrity" "sha512-4WLZnYCkgsUfSC0pftldd0YrLNupSqVIEdxL979f3sXVMBHTUOF3gDa6cEuOk2z8UGyVGcANiNZgvVc333mrHA=="
+  "resolved" "https://registry.npmjs.org/marker-clusterer-plus/-/marker-clusterer-plus-2.1.4.tgz"
+  "version" "2.1.4"
 
 "math-expression-evaluator@^1.2.14":
   "integrity" "sha512-4vRUvPyxdO8cWULGTh9dZWL2tZK6LDBvj+OGHBER7poH9Qdt7kXEoj20wiz4lQUbUXQZFjPbe5mVDo9nutizCw=="
@@ -10178,6 +10212,14 @@
   dependencies:
     "@vue/compiler-sfc" "2.7.7"
     "csstype" "^3.1.0"
+
+"vue2-google-maps@^0.10.7":
+  "integrity" "sha512-y5aBJTAsfGvpsbfgPaeWU7o7QbOeINZKsP6SB9qrBe8U8EYBFO/bTWo3rcMq/NOtgT/XssV3Nwg/2u3no6jWbw=="
+  "resolved" "https://registry.npmjs.org/vue2-google-maps/-/vue2-google-maps-0.10.7.tgz"
+  "version" "0.10.7"
+  dependencies:
+    "babel-runtime" "^6.26.0"
+    "marker-clusterer-plus" "^2.1.4"
 
 "vuex@^3.6.2":
   "integrity" "sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw=="
