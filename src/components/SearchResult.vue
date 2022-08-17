@@ -10,7 +10,17 @@
           <img :src="imagePath" :alt="activeRoadEvent.displayName" />
         </div>
       </div>
-      <div class="dest-img">
+      <!-- <DestinationMap /> -->
+      
+      <GmapMap :zoom="15" :center="center" style="width: 100%; height: 100%">
+        <DirectionsRenderer
+          :travelModeProp="travelMode"
+          :origin="startLocation"
+          :destination="endLocation"
+        />
+      </GmapMap>
+     
+     <div class="dest-img">
         <img :src="destination.img" :alt="destination.title">
       </div>
     </section>
@@ -24,16 +34,29 @@
 </template>
 <script>
 import NavigatorVue from './Navigator.vue'
+import DirectionMap from './DirectionMap.vue'
+import DirectionsRenderer from './DirectionsRenderer'
 import { mapState } from 'vuex'
 // import { translateText } from '../modules/translation'
 
 export default {
     name: "SearchResult",
     components: {
-      NavigatorVue
+      NavigatorVue,
+      DirectionMap,
+      DirectionsRenderer
     },
     data() {
         return {
+          startLocation: {
+            lat: 7.761023104761555,
+            lng: 4.60182950919733
+          },
+          center: {
+            lat: 7.7610728446789174, 
+            lng: 4.601527733709513
+          },
+          travelMode: 'WALKING',
           roadSign: {
             active: 0,
             eventList: [
@@ -45,7 +68,14 @@ export default {
           }
         };
     },
+
     computed: {
+      endLocation () {
+        return {
+          lat: this.destination.lat,
+          lng: this.destination.lng
+        }
+      },
       activeRoadEvent () {
         return {...this.roadSign.eventList[this.roadSign.active]}
       },
@@ -56,6 +86,7 @@ export default {
         destination: 'destination'
       })
     },
+
     methods: {
       async updateActiveEvent () {
         setInterval(()=>{
@@ -70,12 +101,19 @@ export default {
         }, 2000)
       }
     },
+
     created() {
       this.updateActiveEvent()
       // translateText('How are you doing today?', 'yo')
     },
-    updated() {
-      // this.updateVisibility()
-      }
+
+    mounted() {
+      // setTimeout(() => {
+      //   console.log(this.travelMode)
+      //   this.travelMode = 'WALKING'
+      //   console.log("now walking")
+      //   console.log(this.travelMode)
+      // }, 1000)
+    },
 }
 </script>

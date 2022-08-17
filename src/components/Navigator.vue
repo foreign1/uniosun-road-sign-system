@@ -7,15 +7,11 @@
 <script>
 import HomeIcon from 'vue-material-design-icons/Home.vue'
 import ArrowLeftIcon from 'vue-material-design-icons/ArrowLeft.vue';
-import { eventBus } from '../main';
 export default {
   name: 'Navigator',
   components: {HomeIcon, ArrowLeftIcon},
   props: {
     refresh: Function,
-  },
-  mounted () {
-    console.log(eventBus.greeting)
   },
   computed: {
     isHome () {
@@ -30,7 +26,6 @@ export default {
     },
     prev () {
       if(this.$router.currentRoute.name !== 'home') {
-        console.log(this.$router)
         this.$router.go(-1)
       }
     }

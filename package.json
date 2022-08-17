@@ -14,9 +14,12 @@
   },
   "dependencies": {
     "@google-cloud/translate": "^7.0.0",
+    "axios": "^0.27.2",
+    "google-maps-api-loader": "^1.1.1",
     "vue": "^2.5.2",
     "vue-material-design-icons": "^5.1.2",
     "vue-router": "^3.5.4",
+    "vue2-google-maps": "^0.10.7",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
