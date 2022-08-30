@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { SET_DESTINATION, SET_LANGUAGE, SET_MODE} from './mutation-types'
+import { SET_DESTINATION, SET_LANGUAGE, SET_MODE, SET_DIRECTION_STEPS} from './mutation-types'
 
 Vue.use(Vuex)
 
@@ -9,6 +9,7 @@ export const store = new Vuex.Store({
     language: 'manderine',
     mode: 'light',
     destination: '',
+    directionSteps:[],
     count: 0
   },
   getters: {
@@ -55,6 +56,9 @@ export const store = new Vuex.Store({
     },
     [SET_DESTINATION] (state, destination) {
       state.destination = destination
+    },
+    [SET_DIRECTION_STEPS] (state, steps) {
+      state.directionSteps = steps
     }
   },
   actions: {
@@ -66,6 +70,9 @@ export const store = new Vuex.Store({
     },
     [SET_DESTINATION] (context, destination) {
       context.commit('setDestination', destination)
+    },
+    [SET_DIRECTION_STEPS] (context, steps) {
+      context.commit('setDirectionSteps', steps)
     }
   }
 })

@@ -49,7 +49,7 @@ export default {
         ...mapMutations({
           setLanguage: 'setLanguage'
         }),
-    },
+    }
 }
 </script>
 <!-- 4328 -->
