@@ -12,7 +12,7 @@
       </div>
       <!-- <DestinationMap /> -->
       
-      <GmapMap :zoom="15" :center="center" style="width: 100%; height: 100%">
+      <GmapMap :zoom="15" :center="center" style="width: 100%; height: 100%;">
         <DirectionsRenderer
           :travelModeProp="travelMode"
           :origin="startLocation"
@@ -25,9 +25,15 @@
       </div>
     </section>
     <aside class="c__search-result__aside">
-      <h3 class="title">Direction</h3>
+      <h3 class="title">{{directionHeader}}</h3>
       <p class="direction-text">
-        {{ destination.direction }}
+        <span 
+          v-for="(text, index) in translatedDirections"
+          :key=index
+          class="directions" >
+          {{ text }}
+        </span>
+
       </p>
     </aside>
   </div>
@@ -37,7 +43,7 @@ import NavigatorVue from './Navigator.vue'
 import DirectionMap from './DirectionMap.vue'
 import DirectionsRenderer from './DirectionsRenderer'
 import { mapState } from 'vuex'
-// import { translateText } from '../modules/translation'
+import axios from 'axios'
 
 export default {
     name: "SearchResult",
@@ -48,6 +54,8 @@ export default {
     },
     data() {
         return {
+          translatedDirections: [],
+          directionHeader: 'Direction',
           startLocation: {
             lat: 7.761023104761555,
             lng: 4.60182950919733
@@ -83,8 +91,31 @@ export default {
         return require(`@/assets/images/${this.activeRoadEvent.title}`);
       },
       ...mapState({
-        destination: 'destination'
+        language: 'language',
+        destination: 'destination',
+        directionSteps: 'directionSteps'
       })
+    },
+
+    watch: {
+      async directionSteps () {
+        await axios.post('http://localhost:3000/api/translate', {
+          text: [this.directionHeader, ...this.directionSteps],
+          target: this.language.slice(0, 2).toLowerCase()
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          this.directionHeader = response.data[0]
+          this.translatedDirections = response.data.splice(1)
+        })
+        .catch(error => {
+          console.log('error: ', error)
+        })
+      },
     },
 
     methods: {
@@ -99,21 +130,23 @@ export default {
         setTimeout(()=> {
           this.roadSign.isVisible = false
         }, 2000)
+      },
+      async translateRoadsigns () {
+        await axios.post('http://localhost:3000/api/translate', {
+          text: ['Bumps ahead', 'U-Turn ahead', 'Zebra Crossing ahead'],
+          target: this.language.slice(0, 2).toLowerCase()
+        })
+        .then(response => {
+         for( let i = 0; i < response.data.length; i++) {
+          this.roadSign['eventList'][i]['displayName'] = response.data[i]
+         }
+        })
       }
     },
 
     created() {
+      this.translateRoadsigns()
       this.updateActiveEvent()
-      // translateText('How are you doing today?', 'yo')
-    },
-
-    mounted() {
-      // setTimeout(() => {
-      //   console.log(this.travelMode)
-      //   this.travelMode = 'WALKING'
-      //   console.log("now walking")
-      //   console.log(this.travelMode)
-      // }, 1000)
-    },
+    }
 }
 </script>

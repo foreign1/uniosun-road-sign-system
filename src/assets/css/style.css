@@ -125,6 +125,11 @@ body {
   padding: 1rem;
 }
 
+.directions {
+  display: block;
+  margin-top: 1rem;
+}
+
 .c__text-mode--input {
   width: 20rem;
   height: 5rem;
@@ -194,6 +199,7 @@ body {
   left: calc(30% - 4rem);
   background-color: rgb(252, 255, 45);
   border-radius: 0.2rem;
+  z-index: 5;
 }
 .c__road-event .event-text {
   display: inline;

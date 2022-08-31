@@ -9,6 +9,9 @@ yarn-error.log*
 /src/assets/css/style.css.map
 /src/components/DestinationMap.vue
 /src/components/DirectionMap.vue
+/src/.env
+/config/dev.env.js
+/src/modules/utils.js
 # Editor directories and files
 .idea
 .vscode

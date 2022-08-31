@@ -42,19 +42,18 @@
 }
 .u__visibility--hide {
   display: none !important;
-}/*# sourceMappingURL=index.css.map */font-size: 100%;
+}/*# sourceMappingURL=index.css.map */none;
+  color: white;
+  background-color: #60A917;
+  cursor: pointer;
 }
-
-*, *::before, *::after {
-  box-sizing: inherit;
+.u__button--large:hover {
+  background-color: #76cd1f;
 }
-
-body {
-  background-color: black;
-  margin: 0;
-  padding: 0;
-  font-family: "Rubik", sans-serif;
-}/*# sourceMappingURL=index.css.map */00;
+.u__p--center {
+  margin: 0.7rem auto;
+  text-align: center;
+  font-weight: 700;
 }
 .u__margin--all--md {
   padding: 2rem;
@@ -122,4 +121,9 @@ body {
 
 .span {
   padding: 1rem;
+}
+
+.directions {
+  display: block;
+  margin-top: 1rem;
 }/*# sourceMappingURL=index.css.map */
