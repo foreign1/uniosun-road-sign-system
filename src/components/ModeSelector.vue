@@ -60,7 +60,7 @@ export default {
   methods: {
     handleModeSelection (mode) {
         this.$store.dispatch('setMode', mode)
-        this.$router.push('textMode')
+        mode === 'text' ? this.$router.push('textMode') : this.$router.push('voiceMode')
     },
     ...mapActions({
         setMode: 'setMode'
