@@ -42,18 +42,19 @@
 }
 .u__visibility--hide {
   display: none !important;
-}/*# sourceMappingURL=index.css.map */none;
-  color: white;
-  background-color: #60A917;
-  cursor: pointer;
+}/*# sourceMappingURL=index.css.map */font-size: 100%;
 }
-.u__button--large:hover {
-  background-color: #76cd1f;
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
-.u__p--center {
-  margin: 0.7rem auto;
-  text-align: center;
-  font-weight: 700;
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}/*# sourceMappingURL=index.css.map */00;
 }
 .u__margin--all--md {
   padding: 2rem;
@@ -112,6 +113,17 @@ body {
 }
 .p__modeSelector--form button:hover {
   background-color: rgb(4, 179, 4);
+}
+.p__voice-mode__image-container {
+  margin: auto;
+  width: 10rem;
+  height: 8rem;
+  cursor: pointer;
+}
+.p__voice-mode__recording-img {
+  width: 10rem;
+  height: 8rem;
+  border-radius: 1rem;
 }
 
 .but {
