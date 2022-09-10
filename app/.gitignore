@@ -11,8 +11,6 @@ yarn-error.log*
 /src/components/DirectionMap.vue
 /src/.env
 /config/dev.env.js
-/src/modules/utils.js
-/restfulservice/.env
 # Editor directories and files
 .idea
 .vscode

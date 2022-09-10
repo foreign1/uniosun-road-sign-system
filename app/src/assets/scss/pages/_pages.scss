@@ -1,0 +1,66 @@
+@use "../globals/" as g;
+
+.p {
+    &__modeSelector {
+        &--container {
+            background-color: g.$primary;
+            color: g.$accent;
+            display: flex;
+            justify-content: center;
+        }
+
+        &--inner-card {
+            margin: 5rem auto;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 1rem;
+            background-color: g.$font-color;
+            color: g.$primary;
+            width: 40rem;
+        }
+
+        &--form {
+            button {
+                width: 10rem;
+                height: 4rem;
+                line-height: 4rem;
+                margin: .5rem;
+                color: g.$font-color;
+                background-color: green;
+                border: none;
+                border-radius: 1rem;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: rgb(4, 179, 4);
+            }
+        }
+    }
+    &__voice-mode {
+        &__image-container {
+            margin: auto;
+            width: 10rem;
+            height: 8rem;
+            cursor: pointer;
+        }
+        &__recording-img {
+            width: 10rem;
+            height: 8rem;
+            border-radius: 1rem;
+        }
+    }
+}
+
+.but {
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+
+.span {
+    padding: 1rem;
+}
+
+.directions {
+    display: block;
+    margin-top: 1rem;
+}
