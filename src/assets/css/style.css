@@ -115,6 +115,17 @@ body {
 .p__modeSelector--form button:hover {
   background-color: rgb(4, 179, 4);
 }
+.p__voice-mode__image-container {
+  margin: auto;
+  width: 10rem;
+  height: 8rem;
+  cursor: pointer;
+}
+.p__voice-mode__recording-img {
+  width: 10rem;
+  height: 8rem;
+  border-radius: 1rem;
+}
 
 .but {
   box-sizing: border-box;

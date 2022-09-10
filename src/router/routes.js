@@ -3,6 +3,7 @@ import HomeScreen from '@/components/HomeScreen'
 import LanguageSelector from '@/components/LanguageSelector'
 import ModeSelector from '@/components/ModeSelector'
 import TextMode from '@/components/TextMode'
+import VoiceMode from '@/components/VoiceMode'
 import SearchResult from '@/components/SearchResult'
 import DirectionMap from '@/components/DirectionMap'
 
@@ -31,6 +32,11 @@ export default [
     name: 'textMode',
     path: '/textMode',
     component: TextMode,
+  },
+  {
+    name: 'voiceMode',
+    path: '/voiceMode',
+    component: VoiceMode,
   },
   {
     name: 'searchResult',

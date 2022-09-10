@@ -41,7 +41,8 @@
 <script>
 import NavigatorVue from './Navigator.vue'
 import DirectionMap from './DirectionMap.vue'
-import DirectionsRenderer from './DirectionsRenderer'
+import DirectionsRenderer from '@/modules/DirectionsRenderer'
+import { speakDestination } from '@/modules/tts'
 import { mapState } from 'vuex'
 import axios from 'axios'
 
@@ -91,6 +92,7 @@ export default {
         return require(`@/assets/images/${this.activeRoadEvent.title}`);
       },
       ...mapState({
+        mode: 'mode',
         language: 'language',
         destination: 'destination',
         directionSteps: 'directionSteps'
@@ -116,6 +118,11 @@ export default {
           console.log('error: ', error)
         })
       },
+      translatedDirections() {
+        if (this.mode === 'voice') {
+          speakDestination(this.translatedDirections)
+        }
+      }
     },
 
     methods: {
