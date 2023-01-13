@@ -16,7 +16,6 @@ function populateVoiceList(synth, voices) {
 
 function speak(synth, inputTxt, voices) {
   if (synth.speaking) {
-    console.error("speechSynthesis.speaking");
     return;
   }
 
@@ -24,11 +23,9 @@ function speak(synth, inputTxt, voices) {
     const utterThis = new SpeechSynthesisUtterance(inputTxt);
 
     utterThis.onend = function (event) {
-      // console.log("SpeechSynthesisUtterance.onend"); //uncomment in debug mode
     };
 
     utterThis.onerror = function (event) {
-      // console.error("SpeechSynthesisUtterance.onerror"); //uncomment in debug mode
     };
 
     utterThis.voice = voices[0];
@@ -37,7 +34,6 @@ function speak(synth, inputTxt, voices) {
     synth.speak(utterThis);
   }
 }
-
 
 export const speakDestination = (inputTxt) => {
   const synth = window.speechSynthesis;
@@ -54,5 +50,5 @@ export const speakDestination = (inputTxt) => {
       clearInterval(theinterval)
     }
 
-  }, 4000)
+  }, 2500)
 }

@@ -43,6 +43,7 @@ import NavigatorVue from './Navigator.vue'
 import DirectionMap from './DirectionMap.vue'
 import DirectionsRenderer from '@/modules/DirectionsRenderer'
 import { speakDestination } from '@/modules/tts'
+import speakNativeDirections, { hasNativeSupport } from '@/modules/speech.native.js'
 import { mapState } from 'vuex'
 import axios from 'axios'
 
@@ -115,12 +116,15 @@ export default {
           this.translatedDirections = response.data.splice(1)
         })
         .catch(error => {
-          console.log('error: ', error)
+          console.log('error: ', error);
+          this.translatedDirections = ["Directions are currently unavailable for this destination."]
         })
       },
       translatedDirections() {
         if (this.mode === 'voice') {
-          speakDestination(this.translatedDirections)
+          hasNativeSupport(this.language, this.destination.title) ?
+          speakNativeDirections(this.language, this.destination.title) : 
+          speakDestination(this.translatedDirections);
         }
       }
     },
