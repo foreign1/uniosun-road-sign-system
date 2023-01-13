@@ -1,5 +1,6 @@
 <template>
   <div class="u__container">
+      <RoadSign :language="language" />
       <NavigatorVue />
       <div class="u__container--medium">
           <p class="u__p--center">{{destinationQuery.question}}</p>
@@ -24,12 +25,14 @@
   import { locations } from '@/modules/locations'
   import { speechAnalyzer } from '@/modules/utils'
   import { mapGetters, mapActions, mapState } from 'vuex'
+  import RoadSign from './RoadSign.vue';
   import NavigatorVue from './Navigator.vue'
 
   export default {
     name: 'VoiceMode',
     components: {
-        NavigatorVue
+      RoadSign,
+      NavigatorVue
     },
 
     data () {
@@ -40,6 +43,9 @@
     },
 
     computed: {
+    ...mapState({
+        language: 'language',
+    }),
       ...mapState({
         globalDestination: 'destination'
       }),

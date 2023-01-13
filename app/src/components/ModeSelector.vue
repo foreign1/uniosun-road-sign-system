@@ -32,6 +32,7 @@ export default {
 
 <template>
     <div class="u__container">
+        <RoadSign :language="this.language" />
         <NavigatorVue />
         <div class="u__container--medium">
             <div class="u__margin--bottom--md">
@@ -45,14 +46,19 @@ export default {
     </div>
 </template>
 <script>
+import RoadSign from './RoadSign.vue';
 import NavigatorVue from './Navigator.vue'
-import {mapGetters, mapActions } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 export default {
   name: 'ModeSelector',
   components: {
+    RoadSign,
     NavigatorVue
   },
   computed: {
+    ...mapState({
+        language: 'language',
+    }),
     ...mapGetters({
         interaction: 'interaction'
     })
