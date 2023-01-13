@@ -1,5 +1,6 @@
 <template>
     <div class="u__container">
+        <RoadSign :language="language" />
         <NavigatorVue />
         <div class="u__container--medium">
             <p class="u__p--center">{{destinationQuery.question}}</p>
@@ -16,10 +17,12 @@
 <script>
 import { locations } from '../modules/locations.js'
 import { mapGetters, mapActions, mapState } from 'vuex'
+import RoadSign from './RoadSign.vue';
 import NavigatorVue from './Navigator.vue'
 export default {
     name: 'TextMode',
     components: {
+        RoadSign,
         NavigatorVue
     },
     data () {
@@ -32,6 +35,7 @@ export default {
                 return Object.keys(locations)
             },
             ...mapState({
+                language: 'language',
                 globalDestination: 'destination'
             }),
             ...mapGetters({

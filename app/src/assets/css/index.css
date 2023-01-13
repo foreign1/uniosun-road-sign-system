@@ -1,3 +1,29 @@
+.pg__hs--wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 40vh;
+  height: 100vh;
+  background-color: black;
+  /* box-sizing: border-box; */
+  color: white;
+}
+.pg__hs .inner-div {
+  display: inline-block;
+  /* height: 200px; */
+}
+.pg__hs div.mic2 {
+  padding: 2rem;
+}
+.pg__hs .mic {
+  height: 50px;
+  display: inline-block;
+  border: 0.1px solid white;
+  border-radius: 2rem;
+}
+.pg__hs .welcome-text {
+  display: block;
+}
+
 .u__container--medium {
   margin: 10rem auto;
   background-color: #D5E8D4;
@@ -30,31 +56,6 @@
   margin: 0.7rem auto;
   text-align: center;
   font-weight: 700;
-}
-.u__margin--all--md {
-  padding: 2rem;
-}
-.u__margin--bottom--md {
-  margin-bottom: 2rem;
-}
-.u__margin--bottom--sm {
-  margin-bottom: 1rem;
-}
-.u__visibility--hide {
-  display: none !important;
-}/*# sourceMappingURL=index.css.map */font-size: 100%;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-body {
-  background-color: black;
-  margin: 0;
-  padding: 0;
-  font-family: "Rubik", sans-serif;
-}/*# sourceMappingURL=index.css.map */00;
 }
 .u__margin--all--md {
   padding: 2rem;

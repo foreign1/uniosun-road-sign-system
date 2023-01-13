@@ -1,6 +1,7 @@
 <template>
   <div class="u__container">
     <NavigatorVue />
+    <RoadSign />
     <div class="u__container--medium">
       <div class="u__margin--bottom--md">
         <p class="u__p--center">Choose the language of interaction</p>
@@ -18,6 +19,7 @@
   </div>
 </template>
 <script>
+import RoadSign from './RoadSign.vue';
 import NavigatorVue from './Navigator.vue'
 import { mapState } from 'vuex'
 import { mapGetters } from 'vuex'
@@ -26,7 +28,8 @@ import { mapMutations } from 'vuex'
 export default {
     name: 'LanguageSelector',
     components: {
-        NavigatorVue
+      RoadSign,
+      NavigatorVue
     },
     computed: {
       ...mapState({
