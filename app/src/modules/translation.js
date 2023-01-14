@@ -10,7 +10,6 @@ async function translateText(text, target) {
   // multiple texts.
   let [translations] = await translate.translate(text, target);
   translations = Array.isArray(translations) ? translations : [translations];
-  console.log('Translations:', translations);
   return translations
 }
 
