@@ -116,7 +116,6 @@ export default {
           this.translatedDirections = response.data.splice(1)
         })
         .catch(error => {
-          console.log('error: ', error);
           this.translatedDirections = ["Directions are currently unavailable for this destination."]
         })
       },
