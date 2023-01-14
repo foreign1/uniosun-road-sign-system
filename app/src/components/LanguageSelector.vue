@@ -39,11 +39,6 @@ export default {
         interaction: 'interaction'
       })
     },
-    // computed: mapState([
-    //   'language',
-    //   'mode',
-    //   'destination'
-    // ]),
     methods: {
         handleLangChange (language) {
           this.$store.dispatch('setLanguage', language)

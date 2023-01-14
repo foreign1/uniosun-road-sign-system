@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { SET_DESTINATION, SET_LANGUAGE, SET_MODE, SET_DIRECTION_STEPS} from './mutation-types'
+import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex)
 
@@ -74,5 +75,6 @@ export const store = new Vuex.Store({
     [SET_DIRECTION_STEPS] (context, steps) {
       context.commit('setDirectionSteps', steps)
     }
-  }
+  },
+  plugins: [createPersistedState()]
 })

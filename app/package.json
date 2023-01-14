@@ -21,7 +21,8 @@
     "vue-material-design-icons": "^5.1.2",
     "vue-router": "^3.5.4",
     "vue2-google-maps": "^0.10.7",
-    "vuex": "^3.6.2"
+    "vuex": "^3.6.2",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

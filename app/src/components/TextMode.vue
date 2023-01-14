@@ -50,7 +50,7 @@ export default {
             this.$store.dispatch('setDestination', {
                 title: this.destination, ...locations[this.destination]
             })
-            this.$router.push('searchResult')
+            this.$router.push('searchResult').catch(() => {})
         }
     }
 }
