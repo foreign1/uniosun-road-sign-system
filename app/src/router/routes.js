@@ -6,6 +6,7 @@ import TextMode from '@/components/TextMode'
 import VoiceMode from '@/components/VoiceMode'
 import SearchResult from '@/components/SearchResult'
 import DirectionMap from '@/components/DirectionMap'
+import { store } from '../store/store.js'
 
 export default [
   {
@@ -42,6 +43,10 @@ export default [
     name: 'searchResult',
     path: '/searchResult',
     component: SearchResult,
+    beforeEnter: (to, from, next) => {
+      store.state.language !== 'manderine' && store.state.mode !== 'light' &&
+      store.state.destination ? next() : next("/");
+    },
     props: true
   },
   {
