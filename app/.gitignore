@@ -7,8 +7,6 @@ yarn-error.log*
 /test/unit/coverage/
 /src/assets/css/index.css.map
 /src/assets/css/style.css.map
-# /src/components/DestinationMap.vue
-# /src/components/DirectionMap.vue
 /src/.env
 /config/dev.env.js
 # Editor directories and files
